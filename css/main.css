@@ -1,3 +1,135 @@
+*,
+*::after,
+*::before {
+  /* Sane box-sizing */
+  box-sizing: border-box;
+}
+
 html {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 18px;
+  line-height: 1.4;
+  --content-gap: 1em;
+}
+
+body {
+  /* Remove the default margin */
+  margin: 0;
+  background-color: white;
+  /* body height is at least viewport height */
+  min-height: 100vh;
+  /* Prevent adjustments of font size after orientation changes in iOS */
+  -webkit-text-size-adjust: 100%;
+  /* Change the default tap highlight to be completely transparent in iOS */
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  /* avoid default margin collapsing complexity */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+ol,
+p,
+ul {
+  /* avoid default margin collapsing complexity */
+  margin-top: 0;
+  /* space between content blocks */
+  margin-bottom: var(--content-gap);
+}
+
+footer,
+header {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+footer {
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+}
+
+header {
+  padding-top: 1.25em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  gap: var(--content-gap);
+}
+
+picture {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+small {
+  display: block;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  /* no bottom margins for nested lists */
+  margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  padding-left: 1.25rem;
+}
+
+ul > li {
+  display: flex;
+  gap: var(--content-gap);
+}
+
+ul > li > p:first-child {
+  font-size: calc(var(--content-gap) * 2);
+}
+
+ul > li:last-child > p {
+  /* no bottom margins for last list item */
+  margin-bottom: 0;
+}
+
+/* @media rules for width & font-size */
+@media (max-width: 767px) {
+  h1 {
+    font-size: calc(var(--content-gap) * 1.5);
+  }
+}
+@media (min-width: 768px) {
+  body {
+    max-width: 506px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: calc(var(--content-gap) * 2);
+  }
+}
+@media (min-width: 992px) {
+  body {
+    max-width: 655px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    max-width: 800px;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    max-width: 900px;
+  }
 }
