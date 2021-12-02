@@ -9,13 +9,14 @@ html {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 18px;
   line-height: 1.4;
-  --content-gap: 1em;
+  color: #111;
+  --content-gap: 1rem;
 }
 
 body {
   /* Remove the default margin */
   margin: 0;
-  background-color: white;
+  background-color: #eee;
   /* body height is at least viewport height */
   min-height: 100vh;
   /* Prevent adjustments of font size after orientation changes in iOS */
@@ -24,14 +25,6 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-h1 {
-  /* avoid default margin collapsing complexity */
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-ol,
 p,
 ul {
   /* avoid default margin collapsing complexity */
@@ -42,23 +35,33 @@ ul {
 
 footer,
 header {
-  padding-left: 1.25em;
-  padding-right: 1.25em;
+  padding: 1.25em;
 }
 
-footer {
-  padding-top: 1.25em;
-  padding-bottom: 1.25em;
-  border-top: 1px solid #eaeaea;
-  text-align: center;
-}
+/* Header */
 
 header {
-  padding-top: 1.25em;
-  padding-bottom: 1em;
   border-bottom: 1px solid #eaeaea;
   display: flex;
   gap: var(--content-gap);
+}
+
+h1 {
+  /* avoid default margin collapsing complexity */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+small {
+  display: block;
+}
+
+/* Header image */
+
+img,
+source {
+  border-radius: 50%;
 }
 
 picture {
@@ -67,38 +70,33 @@ picture {
   height: 200px;
 }
 
-small {
-  display: block;
-}
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  /* no bottom margins for nested lists */
-  margin-bottom: 0;
-}
+/* List */
 
 ul {
   list-style: none;
   margin-bottom: 0;
-  padding-top: 1.25em;
-  padding-bottom: 1.25em;
-  padding-left: 1.25rem;
+  padding: 1.25em;
 }
 
-ul > li {
+li {
   display: flex;
   gap: var(--content-gap);
 }
 
-ul > li > p:first-child {
+li > p:first-child {
   font-size: calc(var(--content-gap) * 2);
 }
 
-ul > li:last-child > p {
+li:last-child > p {
   /* no bottom margins for last list item */
   margin-bottom: 0;
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid #eaeaea;
+  text-align: center;
 }
 
 /* @media rules for width & font-size */
@@ -112,10 +110,6 @@ ul > li:last-child > p {
     max-width: 506px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  h1 {
-    font-size: calc(var(--content-gap) * 2);
   }
 }
 @media (min-width: 992px) {
