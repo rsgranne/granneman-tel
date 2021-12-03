@@ -44,6 +44,7 @@ header {
   border-bottom: 1px solid #eaeaea;
   display: flex;
   gap: var(--content-gap);
+  align-items: flex-start;
 }
 
 h1 {
@@ -59,15 +60,10 @@ small {
 
 /* Header image */
 
-img,
-source {
+img {
   border-radius: 50%;
-}
-
-picture {
+  height: auto;
   display: block;
-  width: 200px;
-  height: 200px;
 }
 
 /* List */
@@ -84,7 +80,7 @@ li {
 }
 
 li > p:first-child {
-  font-size: calc(var(--content-gap) * 2);
+  font-size: 2rem;
 }
 
 li:last-child > p {
@@ -102,7 +98,11 @@ footer {
 /* @media rules for width & font-size */
 @media (max-width: 767px) {
   h1 {
-    font-size: calc(var(--content-gap) * 1.5);
+    font-size: 1.5rem;
+  }
+
+  img {
+    max-width: 30vw;
   }
 }
 @media (min-width: 768px) {
